@@ -1,0 +1,80 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><title>???</title><link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet"><style>*{margin:0;padding:0;box-sizing:border-box}body{background:#0d0d0d;min-height:100vh;display:flex;align-items:center;justify-content:center}.t{font-family:'VT323',monospace;font-size:clamp(1.2rem,4vw,2rem);color:#cc0000;text-shadow:0 0 8px #ff000066;word-break:break-all;max-width:600px;padding:2rem;line-height:1.6;text-align:center;animation:g 6s infinite}@keyframes g{0%,90%,100%{transform:none;filter:none}91%{transform:translateX(-2px);filter:hue-rotate(90deg)}92%{transform:translateX(2px);filter:none}93%{transform:none;filter:hue-rotate(-90deg)}94%{transform:none;filter:none}}canvas{display:none}#overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.95)}#loader{display:none;width:40px;height:40px;border:3px solid #1a1a1a;border-top-color:#cc0000;border-radius:50%;animation:spin 1s linear infinite;position:absolute;top:50%;left:50%}@keyframes spin{to{transform:rotate(360deg)}}#modal{display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#111;border:1px solid #cc0000;padding:2rem;color:#cc0000;font-family:'VT323',monospace}#toast{display:none;position:fixed;bottom:2rem;right:2rem;background:#cc0000;color:#000;padding:0.5rem 1rem;font-family:'VT323',monospace}</style></head><body>
+<canvas id="c"></canvas><div id="overlay"></div><div id="loader"></div><div id="modal"></div><div id="toast"></div>
+<script>
+const _0x1a2b=["Li4vMDEvLi4uLg=="];
+const _0x3c4d=atob(_0x1a2b[0]);
+const _0xab12=btoa(_0x3c4d);
+const _0xcd34=_0xab12.length;
+const _0xef56=[];
+for(let i=0;i<_0xcd34;i++){_0xef56.push(_0xab12.charCodeAt(i))}
+const _0x7g8h=_0xef56.reverse();
+const _0xij90=_0x7g8h.map(x=>x^0);
+const _0xkl12=_0xij90.map(x=>x.toString(16));
+const _0xmn34=_0xkl12.join("");
+const _0xop56=[];
+for(let i=0;i<_0xmn34.length;i+=2){_0xop56.push(parseInt(_0xmn34.substr(i,2),16))}
+const _0xqr78=_0xop56.filter(x=>x>0);
+const _0xst90=_0xqr78.map(x=>String.fromCharCode(x)).join("");
+const _0xuv12=_0xst90.split("").reverse().join("");
+const _0xwx34=encodeURIComponent(_0xuv12);
+const _0xyz56=_0xwx34.length;
+const _0xaa11=[];
+for(let i=0;i<_0xyz56;i++){_0xaa11.push(_0xwx34[i])}
+const c=document.getElementById("c");
+const ctx=c.getContext("2d");
+c.width=window.innerWidth;
+c.height=window.innerHeight;
+const cols=Math.floor(c.width/16);
+const drops=Array(cols).fill(1);
+function drawMatrix(){
+  ctx.fillStyle="rgba(13,13,13,0.05)";
+  ctx.fillRect(0,0,c.width,c.height);
+  ctx.fillStyle="#cc000022";
+  ctx.font="16px VT323";
+  drops.forEach((y,i)=>{
+    const ch=String.fromCharCode(0x30A0+Math.random()*96);
+    ctx.fillText(ch,i*16,y*16);
+    if(y*16>c.height&&Math.random()>0.975)drops[i]=0;
+    drops[i]++;
+  });
+}
+const _0xbb22=setInterval(drawMatrix,9999999);
+const _0xcc33=[];
+window.addEventListener("resize",()=>{
+  c.width=window.innerWidth;
+  c.height=window.innerHeight;
+});
+const _0xdd44=document.getElementById("overlay");
+const _0xee55=document.getElementById("loader");
+const _0xff66=document.getElementById("modal");
+const _0xgg77=document.getElementById("toast");
+function showLoader(){_0xee55.style.display="block"}
+function hideLoader(){_0xee55.style.display="none"}
+function showModal(msg){_0xff66.textContent=msg;_0xff66.style.display="block"}
+function hideModal(){_0xff66.style.display="none"}
+function showToast(msg){_0xgg77.textContent=msg;_0xgg77.style.display="block";setTimeout(()=>_0xgg77.style.display="none",3000)}
+function hideToast(){_0xgg77.style.display="none"}
+const _0xhh88=[];
+document.addEventListener("keydown",e=>{
+  _0xhh88.push(e.key);
+  if(_0xhh88.length>20)_0xhh88.shift();
+});
+const _0xii99=["ArrowUp","ArrowUp","ArrowDown","ArrowDown"];
+function checkKonami(){return _0xhh88.slice(-4).join(",")==_0xii99.join(",")}
+setInterval(()=>{if(checkKonami()){}},5000);
+const _0xjj00=performance.now();
+const _0xkk11=Date.now();
+const _0xll22=navigator.userAgent;
+const _0xmm33=screen.width+"x"+screen.height;
+const _0xnn44=Intl.DateTimeFormat().resolvedOptions().timeZone;
+const _0xoo55=navigator.language;
+const _0xpp66=[];
+for(let i=0;i<100;i++){_0xpp66.push(Math.random())}
+const _0xqq77=_0xpp66.reduce((a,b)=>a+b,0);
+const _0xrr88=_0xpp66.map(x=>x*_0xqq77);
+const _0xss99=_0xrr88.filter(x=>x>50);
+const _0xtt00=_0xss99.length;
+</script>
+<!-- xor-key: Li4vMDEvLi4uLg== -->
+<div class="t">ah1rBHQZHBgfHRoYHQNyGxgZaBhvGRwGBhgcGxYaGhhpBgcaGhtqGhkZHQQJGm8bFxkXHRwEAxkYGRYZahhsBA==</div>
+</body></html>
